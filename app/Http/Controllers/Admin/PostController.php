@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostControl extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $post = Post::all();
+        return view('admin.posts.index', compact('post'));
     }
 
     /**
@@ -21,7 +22,7 @@ class PostControl extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -37,7 +38,7 @@ class PostControl extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -45,7 +46,7 @@ class PostControl extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -61,6 +62,7 @@ class PostControl extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('admin.posts.index');
     }
 }

@@ -1,5 +1,6 @@
 <?php
-use App\Http\Cobtrollers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,11 +20,10 @@ Route::get('/', function () {
 })->name('welcome');
 
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group
-(function(){
-    Route::get('/',[DashboardController::class,'index'])->name('dahsboard');
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function(){
+    Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
-    Route::resource('post',PostControlle::class);
+    Route::resource('posts',PostController::class);
 });
 
 Route::middleware('auth')->group(function () {
