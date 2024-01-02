@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $post = Post::all();
-        return view('admin.posts.index', compact('post'));
+        //
     }
 
     /**
@@ -22,7 +20,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        //
     }
 
     /**
@@ -36,23 +34,23 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Player $player)
     {
-        return view('admin.posts.show', compact('post'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Player $player)
     {
-        return view('admin.posts.edit', compact('post'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Player $player)
     {
         //
     }
@@ -60,9 +58,8 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Player $player)
     {
-        $post->delete();
-        return redirect()->route('admin.posts.index');
+        //
     }
 }
