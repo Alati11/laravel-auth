@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if(session('success'))
+<div class="alert alert-success text-center">
+    {{ session('success') }}
+</div>
+@endif
+
     <section>
         <div class="container ">
             <h1 class="title">ATP RANKINGS</h1>
@@ -30,10 +37,10 @@
                                     {{ $player->name }}
                                 </a>
                             </td>
-                            <td>{{$player->image}}</td>
+                            <td><img src="{{$player->image}}" alt="Image Player"></td>
                             <td>{{$player->age}}</td>
-                            <td>{{$player->weight}}</td>
-                            <td>{{$player->height}}</td>
+                            <td>{{$player->weight}} kg</td>
+                            <td>{{$player->height}} cm</td>
                             <td>{{$player->points}}</td>
                             <td>{{$player->country}}</td>
                             <td>
@@ -56,11 +63,8 @@
                         <tr>
                             <td>Not Player</td>
                         </tr>
-                        
                     @endforelse
-                    
                 </tbody>
-
             </table>
         </div>
     </section>

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="jumbotron p-5 mb-4 bg-light rounded-3">
-    <div class="container py-5">
+<div class="jumbotron welcome p-5 rounded-3">
+    <div class="container py-1">
         <div class="logo_laravel">
             <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-25">
                 <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -11,17 +11,50 @@
             </svg>
         </div>
         <h1 class="display-5 fw-bold">
-            Welcome to Laravel+Bootstrap 5
+            Benvenuto! Questo è passione tennis!
         </h1>
 
-        <p class="col-md-8 fs-4">This a preset package with Bootstrap 5 views for laravel projects including laravel breeze/blade. It works from laravel 9.x to the latest release 10.x</p>
-        <a href="https://packagist.org/packages/pacificdev/laravel_9_preset" class="btn btn-primary btn-lg" type="button">Documentation</a>
+        <p class="col-md-8 fs-4">Il portale dedicato a tutti gli appassionati di tennis</p>
+        <a class="btn btn-home button" type="button" href="{{ route('register') }}">{{ __('Registrati  ') }}</a>
     </div>
 </div>
 
 <div class="content">
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis accusamus dolores!</p>
+        <div class="row">
+            <div class="col-3">
+                <div class="card-text-passion card-tennis">
+                    <p>“Gli elementi basilari del tennis sono quelli dell’esistenza 
+                        quotidiana, perché ogni match è una vita in miniatura.”</p>
+                     <p>ANDRE AGASSI</p>   
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card-text-passion card-tennis">
+                    <p>“La particolarità di Federer è che è Mozart e i Metallica allo stesso tempo.”</p>
+                    <p>DAVID FOSTER WALLACE</p>
+                </div>
+            </div>
+                
+            <div class="col-3">
+                <div class="card-text-passion card-tennis">
+                    <p>“La vita, come il tennis, è questione di tempi. Se arrivi in tempo sulla palla, 
+                        questa approda facilmente nell’altra metà campo, ma se sei in ritardo tutti 
+                        i tuoi sogni si incaglieranno in una semplice rete.
+                    </p>
+                    <p>ANONIMO</p>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card-text-passion card-tennis">
+                    <p>“Il tennis è la perfetta combinazione di una azione violenta che si svolge in un clima di totale tranquillità.”</p>
+                    <p>BILLIE JEAN KING</p>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </div>
 @endsection

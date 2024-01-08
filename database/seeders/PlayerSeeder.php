@@ -7,10 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
-// require 'vendor/autoload.php';
-
 include 'Helpers.php';
-
 
 class PlayerSeeder extends Seeder
 {
@@ -24,12 +21,18 @@ class PlayerSeeder extends Seeder
 
             $new_player = new Player();
 
-            $new_player->ranking = $faker->numberBetween(1, 100);
+            $generatedNumbers = [];
+
+            do {
+                $new_player->ranking = $faker->numberBetween(1, 100);
+            }while (in_array($new_player->ranking, $generatedNumbers));
+
+            $generatedNumbers [] = $new_player->ranking;
+
             $new_player->name = $faker->name(['gender' => 'male']);
-            
             $new_player->image = $faker->image(null, 360, 360, 'animals', true, true, 'cats', true, 'jpg');
             if (empty($new_player->image)) {
-                $new_player->image = 'default_image.jpg';
+                $new_player->image = asset('images/Federer_01-1080x675.png') ;
             }
 
             $new_player->age = $faker->numberBetween(18, 38);

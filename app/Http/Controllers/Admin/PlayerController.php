@@ -13,7 +13,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $players = Player::all();
+        $players = Player::orderBy('ranking')->get();
         return view('admin.players.index', compact('players'));
     }
 
@@ -45,7 +45,8 @@ class PlayerController extends Controller
 
         $newPlayer = Player::create($data);
 
-        return redirect()->route('admin.players.index')->with('success','Giocatore creato con successo!');
+        return redirect()->route('admin.players.index')->with('success','Player created successfully!');
+        dd(session('success'));
     }
 
     /**

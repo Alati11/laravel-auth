@@ -24,8 +24,8 @@
 
 
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> --}}
-        <nav class="navbar navbar-expand-md nav-bg shadow-s">
-            <div class="container">
+        <nav class="navbar navbar-expand-md nav-bg shadow-s sticky-top">
+            <div class="container d-flex justify-content-between">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
                         <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 150px">
@@ -49,6 +49,8 @@
                         </li>
                     </ul>
 
+                 
+                           
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -62,6 +64,13 @@
                         </li>
                         @endif
                         @else
+                           {{-- Center Side of Navabar --}}
+                        <div class="">
+                            <form class="d-flex justify-center">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.players.create') }}">{{ __('Add Player') }}</a>
                         </li>

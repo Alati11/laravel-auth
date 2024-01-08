@@ -37,7 +37,7 @@
             </div>
 
             <div>
-                <input type="submit" class="button" value="Save">
+                <input type="submit" class="button btn-add-player" value="Save">
             </div>
         </form>
         @if($errors->any())

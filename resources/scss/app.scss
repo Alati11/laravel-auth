@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
+ul, ol, menu {
+    list-style: none;
+  }
+
+  img {
+    max-width: 100%;
+}
 
 body {
     margin: 0; 
@@ -19,24 +26,30 @@ body {
     background-color: #333333;
 }
 
-img {
-    max-width: 100%;
-}
-
-.card-player {  
-    margin: 100px auto;
-    width:500px;
-    height:500px;
+.card-tennis {
     background: rgba(255, 255, 255, 0.1); 
-    color: black;
+    color: whitesmoke;
+    border: 2px solid black;
     border-radius: 1.5em;
     text-align: center;
-    line-height: 1.2em;
-    vertical-align: middle;
+    // line-height: 1.8em;
+    // vertical-align: middle;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transform: translateZ(0);
     backdrop-filter: blur(5px);
     filter: drop-shadow(30px 30px 50px black);
+}
+
+.card-profile {  
+    margin: 50px auto;
+    width:500px;
+    height:450px;
+}
+
+.card-player {  
+    margin: 10px auto;
+    width:500px;
+    height: 650px;
     animation: moveCard 5s;
 }
 
@@ -75,18 +88,22 @@ img {
 
 .button { 
     display: inline-block;  
-    background-color: #CEE947;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    color: #333333;
-    border-radius: 20px;
-    padding: 8px;
+    border-radius: 0.5em;
+    padding: 10px;
     border-style: none;
     text-align: center;
     backdrop-filter: blur(5px);
-}   
+} 
 
-.button:hover {
+.btn-add-player {
+    background-color: #CEE947;
+    color: #333333;
+}
+
+.btn-add-player:hover {
     background-color: #A0D33C;
+    color: whitesmoke;
 }
 
 .title {
@@ -97,4 +114,38 @@ img {
 .nav-bg {
     background-color: #CEE947;
     color: whitesmoke;
+}
+
+// HOME
+.btn-home {
+    background: #033b80;
+    color: #fff;
+}
+
+.btn-home:hover {
+    background-color: #0c69dc;
+}
+
+.card-text-passion {
+    margin: 20px auto;
+    padding: 20px;
+    width: 250px;
+    height: 300px; 
+}
+
+// DASHBOARD
+.card-dash {
+    width: 400px;
+    height: 200px;
+    margin: 50px auto;
+    font-size: 30px;
+}
+
+// SHOW
+.img-player{
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    margin: 20 auto;
+    margin-bottom: 20px;
 }
